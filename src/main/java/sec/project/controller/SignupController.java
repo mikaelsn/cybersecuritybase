@@ -2,12 +2,12 @@ package sec.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import sec.project.domain.Signup;
 import sec.project.repository.SignupRepository;
-import org.springframework.ui.Model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -71,7 +71,7 @@ public class SignupController {
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String getSignups(@RequestParam String admin, Model model) {
+    public String getAdminPanel(@RequestParam String admin, Model model) {
         if ("true".equals(admin)) {
             model.addAttribute("signups", signupRepository.findAll());
             return "admin";
