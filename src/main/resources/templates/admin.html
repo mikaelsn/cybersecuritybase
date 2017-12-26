@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+    </meta>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    <tr th:each="signup : ${signups}">
+        <td th:text="${signup.id}">name</td>
+        <td th:text="${signup.name}">name</td>
+        <td th:text="${signup.address}">address</td>
+    </tr>
+</table>
+
+</body>
+</html>

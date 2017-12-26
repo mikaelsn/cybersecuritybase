@@ -1,9 +1,12 @@
 package sec.project.domain;
 
-import javax.persistence.Entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 @Entity
+@Table(name="SIGNUP")
 public class Signup extends AbstractPersistable<Long> {
 
     private String name;
